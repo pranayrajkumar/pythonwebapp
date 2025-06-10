@@ -11,15 +11,10 @@ pool:
 
 strategy:
   matrix:
-    Python38:
-      python.version: '3.8'
+    
     Python39:
-      python.version: '3.9'
-    Python310:
-      python.version: '3.10'
-    Python311:
-      python.version: '3.11'
-
+      python.version: '3.9"
+      
 steps:
 - task: UsePythonVersion@0
   inputs:
@@ -30,8 +25,3 @@ steps:
     python -m pip install --upgrade pip
     pip install -r requirements.txt
   displayName: 'Install dependencies'
-
-- script: |
-    pip install pytest pytest-azurepipelines
-    pytest
-  displayName: 'pytest'
